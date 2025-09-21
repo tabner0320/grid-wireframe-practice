@@ -1,59 +1,24 @@
-/* Layout using CSS Grid */
-body {
-    background-color: #f5f5f5;
+/* Default mobile-first layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* single column by default */
+  gap: 20px;
 }
 
-.header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
+/* Desktop layout */
+@media (min-width: 1024px) { /* adjust breakpoint as needed */
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+    gap: 30px;
+  }
+
+  header {
+    grid-column: 1 / -1; /* header spans all columns */
+  }
+
+  footer {
+    grid-column: 1 / -1; /* footer spans all columns */
+  }
 }
 
-.header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
 
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 200px 150px 150px 150px;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.hero {
-    background-color: #9bc1bc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-1 {
-    background-color: #f08a5d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-2 {
-    background-color: #b83b5e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-3 {
-    background-color: #6a2c70;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
