@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Wireframe Practice</title>
-        <link rel="stylesheet" href="./css/reset.css">
-        <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive CSS Grid wireframe demonstrating mobile-first layout design.">
+  <title>Responsive Grid Wireframe</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <div class="container">
+    <header class="panel site-header">
+      <p class="eyebrow">CSS Grid Practice</p>
+      <h1>Responsive Wireframe</h1>
+      <p>A mobile-first layout that adapts from a single column to a three-column desktop grid.</p>
+    </header>
 
-   <div class="container">
-    <header>Header</header>
-    <aside class="left">Aside</aside>
-    <main>
-      <article>
-        <div class="column">Column</div>
-        <div class="column">Column</div>
-        <div class="column">Column</div>
+    <aside class="panel left" aria-labelledby="left-sidebar-title">
+      <h2 id="left-sidebar-title">Left Sidebar</h2>
+      <p>Supporting navigation or secondary content can live here.</p>
+    </aside>
+
+    <main class="panel">
+      <h2>Main Content</h2>
+      <article class="content-grid">
+        <section class="column">
+          <h3>Column One</h3>
+          <p>A flexible content area created with CSS Grid.</p>
+        </section>
+        <section class="column">
+          <h3>Column Two</h3>
+          <p>The inner grid responds independently from the page layout.</p>
+        </section>
+        <section class="column">
+          <h3>Column Three</h3>
+          <p>Columns stack on smaller screens for easier reading.</p>
+        </section>
       </article>
     </main>
-    <aside class="right">Aside</aside>
-    <footer>Footer</footer>
+
+    <aside class="panel right" aria-labelledby="right-sidebar-title">
+      <h2 id="right-sidebar-title">Right Sidebar</h2>
+      <p>Additional links, notes, or related information can live here.</p>
+    </aside>
+
+    <footer class="panel">
+      <p>Responsive CSS Grid Layout Practice</p>
+    </footer>
   </div>
 </body>
-
-
-
-
+</html>
