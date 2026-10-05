@@ -1,24 +1,116 @@
-/* Default mobile-first layout */
+:root {
+  --page-bg: #f3f4f6;
+  --panel-bg: #ffffff;
+  --text: #1f2937;
+  --muted: #5f6b7a;
+  --border: #94a3b8;
+  --accent: #2563eb;
+  --radius: 12px;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
 .container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr; /* single column by default */
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
-/* Desktop layout */
-@media (min-width: 1024px) { /* adjust breakpoint as needed */
-  .container {
-    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
-    gap: 30px;
-  }
+.panel {
+  padding: 24px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel-bg);
+}
 
-  header {
-    grid-column: 1 / -1; /* header spans all columns */
-  }
+.site-header {
+  border-top: 5px solid var(--accent);
+}
 
-  footer {
-    grid-column: 1 / -1; /* footer spans all columns */
+.eyebrow {
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.column {
+  min-height: 160px;
+  padding: 20px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+}
+
+/* Tablet: display the three inner content areas side by side. */
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+/* Desktop: use left sidebar, main content, and right sidebar columns. */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    gap: 24px;
+  }
 
+  header,
+  footer {
+    grid-column: 1 / -1;
+  }
+
+  .left {
+    grid-column: 1;
+  }
+
+  main {
+    grid-column: 2;
+  }
+
+  .right {
+    grid-column: 3;
+  }
+}
